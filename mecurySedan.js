@@ -23,8 +23,8 @@ class Car extends VehicleModule.Vehicle{
     loadPassenger(num){
         if(this.passenger < this.maximumPassengers){
             if((this.passenger + num) <= this.maximumPassengers){
-                this.passenger = num;
                 console.log('Perfect! Everyone can load up.')
+                this.passenger = num;
                 return this.passenger;
             }
             else{
@@ -32,18 +32,19 @@ class Car extends VehicleModule.Vehicle{
             }
         }
         else{
-            console.log(`Sorry! This ${this.make, this.make} is full now.`)
+            console.log(`Sorry! This ${this.make} ${this.model} is full now.`)
         }
     }
 
     //method for if fuel is greater than 0, then start is true
     start(){
         if(this.fuel > 0){
-            console.log('You have enough fuel to drive.')
+            console.log('Yay! You have enough fuel to drive.')
             return this.started == true;
         }
         else{
-            console.log('You have no fuel!')
+            console.log('Uh oh! You have no fuel!')
+            return this.started == false;
         }
     }
 
@@ -57,7 +58,7 @@ class Car extends VehicleModule.Vehicle{
 }
 
 
-let myCar = new Car("Mecury", "Sedan", "1965", "red", "50000")
+let myCar = new Car("Mecury", "Sedan", "1965", "red", 50000)
 myCar.start()
 myCar.loadPassenger(5)
 myCar.schService()
